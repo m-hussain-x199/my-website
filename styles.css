@@ -1,0 +1,357 @@
+/* Global Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.8;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.1) 100%);
+    animation: animate 10s linear infinite;
+    z-index: -100;
+    
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 1000px;
+    }
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ff6a;
+}
+
+/* Section Styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h1, section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00ff6a;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+section p, section ul li {
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills and Experience List */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+/* Hover Effect for Skills */
+ul li:hover {
+    background-color: rgba(0, 255, 106, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Contact Section Styling */
+section#contact a {
+    color: #00ff6a;
+    text-decoration: none;
+}
+
+section#contact a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #00ff6a;
+}
+
+/* Smooth Scroll for Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adding Particle Animation to Background */
+@keyframes particles {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/dark-fish-skin.png');
+    animation: particles 60s linear infinite;
+    z-index: -2;
+}
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.8;
+    position: relative;
+    min-height: 100vh;  /* Ensures the body takes at least 100% of the viewport height */
+    overflow-y: auto;   /* Enable vertical scrolling */
+}
+
+/* Section Styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    min-height: 100vh;  /* Ensure each section takes up full height of the viewport for better scrolling */
+}
+
+/* Footer - Updated to prevent interference with scrolling */
+footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    position: relative;  /* Changed from 'fixed' to 'relative' */
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+/* Full-screen animated background */
+#animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: black;
+    overflow: hidden;
+}
+
+/* Coding-like background effect */
+#animated-bg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg, rgba(0, 255, 106, 0.2) 0px, rgba(0, 255, 106, 0.2) 1px, transparent 1px, transparent 50px
+    );
+    z-index: 1;
+    animation: scrollBackground 10s linear infinite;
+}
+
+@keyframes scrollBackground {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+/* Mouse pointer trail effect */
+.pointer-trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 255, 106, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Particle Background */
+#particle-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ff6a;
+}
+
+/* Section Styling */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+/* Hover Effects */
+h1, h2 {
+    font-size: 2.5rem;
+    color: #00ff6a;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 100%;
+    bottom: 0;
+    color: white;
+}
+
+/* Particle Styling for Click, Scroll and MouseMove */
+.click-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: click-animate 0.5s ease-out;
+    pointer-events: none;
+    transform: scale(0);
+}
+
+@keyframes click-animate {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
