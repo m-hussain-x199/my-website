@@ -30,7 +30,7 @@ This is my personal portfolio website, built to showcase my skills, projects, an
 - Responsive Web Design
 
 
-3 🚀 Deployment
+# 🚀 Deployment
 
 This website is deployed on Netlify and available at:
 
